@@ -112,31 +112,23 @@
     .used { background: var(--warning-bg); color: var(--warning-text); border-color: #fcd34d; }
     .invalid { background: var(--error-bg); color: var(--error-text); border-color: #fca5a5; }
 
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 16px;
-    }
+  .actions {
+  margin-top: 16px;
+  text-align: center;
+}
 
-    button {
-      appearance: none;
-      border: 0;
-      border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+.btn-primary {
+  display: inline-block;
+  background: #163860;
+  color: #fff;
+  min-width: 220px;
+  padding: 14px 24px;
+  border-radius: 12px;
+}
 
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-    }
+.btn-primary:hover {
+  background: #0f2c4d;
+}
 
     @media (max-width: 420px) {
       h1 { font-size: 24px; }
