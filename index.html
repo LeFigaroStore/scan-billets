@@ -36,32 +36,27 @@
     }
 
     .wrap {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-   .header {
-  margin-bottom: 16px;
-  text-align: center;
+.header {
+  margin-bottom: 24px;
+  text-align: left;
 }
 
 .logo {
-  display: inline-block;
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 20px;
 }
 
 h1 {
   font-size: 28px;
   line-height: 1.1;
-  margin: 0;
+  margin: 0 0 12px;
   color: #163860;
 }
 
@@ -73,20 +68,24 @@ h1 {
   text-align: center;
 }
 
+.actions {
+  margin-top: 16px;
+  text-align: left;
+}
+
 .btn-primary {
   display: inline-block;
   background: #163860;
   color: #fff;
-  min-width: 220px;
-  padding: 14px 24px;
+  min-width: 0;
+  padding: 14px 22px;
   border-radius: 12px;
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .btn-primary:hover {
   background: #0f2c4d;
 }
-
     @media (max-width: 420px) {
       h1 { font-size: 24px; }
       .result-title { font-size: 20px; }
