@@ -185,39 +185,30 @@
 <body>
   <main class="wrap">
     <section class="header">
-      <div class="badge">Prototype de scan billets</div>
-      <h1>Validation des billets</h1>
-      <p class="sub">Prototype mobile à brancher à votre API de validation. Le scan se fait dans le navigateur, puis le code QR est envoyé à votre serveur pour obtenir un statut.</p>
-    </section>
+  <img src="LeFigarostore-6x.jpg" alt="Le Figaro Store" class="logo">
+  <h1>Validation des billets</h1>
+</section>
 
     <section class="card">
       <div class="reader-shell">
         <div id="reader"></div>
 
-        <div id="result" class="result neutral" aria-live="polite">
-          <p class="result-title">Prêt à scanner</p>
-          <p class="result-message">Autorisez la caméra, puis présentez un billet devant l’objectif.</p>
-          <div class="result-meta">Endpoint attendu : <code>/api/tickets/validate</code></div>
-        </div>
+       <div id="result" class="result neutral" aria-live="polite">
+  <p class="result-title">Prêt à scanner</p>
+  <p class="result-message">Autorisez la caméra, puis présentez un billet devant l’objectif.</p>
+</div>
 
         <div class="actions">
-          <button id="resumeBtn" class="btn-primary" type="button">Scanner de nouveau</button>
-          <button id="testBtn" class="btn-secondary" type="button">Tester avec un faux billet</button>
-        </div>
+  <button id="resumeBtn" class="btn-primary" type="button">Scanner de nouveau</button>
+</div>
       </div>
     </section>
-
-    <aside class="helper">
-      Réponses attendues de l’API : <code>valid</code>, <code>used</code>, <code>invalid</code>. Exemple JSON : <code>{"status":"valid","message":"Billet valide","ticket_id":"TCK-001","holder":"Jeanne Martin"}</code>.
-    </aside>
-  </main>
 
   <script src="https://unpkg.com/html5-qrcode" defer></script>
   <script>
     window.addEventListener('load', function () {
       const resultBox = document.getElementById('result');
       const resumeBtn = document.getElementById('resumeBtn');
-      const testBtn = document.getElementById('testBtn');
       let scanner;
       let lock = false;
       let lastScan = null;
@@ -258,7 +249,12 @@
         try {
           const response = await fetch('/api/tickets/validate', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' }, .logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 18px;
+}
             body: JSON.stringify({ code: decodedText })
           });
 
@@ -289,10 +285,6 @@
         lock = false;
         lastScan = null;
         setResult('neutral', 'Prêt à scanner', 'Présentez un billet devant l’objectif.', 'Le prochain scan relancera la validation.');
-      });
-
-      testBtn.addEventListener('click', function () {
-        validateCode('TEST-TICKET-001');
       });
 
       function startScanner() {
